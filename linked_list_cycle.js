@@ -9,8 +9,15 @@
 
 var hasCycle = function(head) {
   let seen = {}
-  for (let step = 0; step < head.length; step++) {
-
+  // So the problem here is can you have two different nodes with the same value?
+  // like what is the notion of identity?
+  while (head.next) {
+    if (seen[head.val]) {
+      return true
+    } else {
+     seen[head.val] = true
+     continue
+    }
   }
 };
 
