@@ -34,6 +34,9 @@ defmodule Solution do
       # 2 - one for the duplicate and the rest of the
       if before > 0 || after_ > 0 do
         Map.put(acc, num, before + after_ + increment)
+        # This is wrong because always adding both doesn't actually make sense.
+        # I think we want to increment the value of the items that exist in the map
+        # only... but we also want to add + 1 and - 1?
         |> Map.put(num + 1, before + after_ + increment)
         |> Map.put(num, before + after_ + increment)
         |> Map.put(num - 1, before + after_ + increment)
